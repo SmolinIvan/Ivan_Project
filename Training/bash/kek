@@ -1,0 +1,10 @@
+class A:
+    def HelloWorld(self):
+        print("Class A: Hello world!")
+
+class B(A):
+    def HelloWorld(self):
+        print("Class B: Hello world!")
+
+
+objB = B()

@@ -1,0 +1,14 @@
+var jsonData = JSON.parse(responseBody);
+var beb = jsonData.id;
+pm.environment.set("PetId", beb, "Pets");
+
+
+
+
+
+
+SELECT CustomerID, CustomerName, Count(CustomerID) as Количество_заказов,  MAX(OrderDate) FROM Orders
+INNER JOIN Customers USING(CustomerID)
+GROUP by CustomerID
+HAVING COUNT(CustomerID)>5
+ORDER BY CustomerID ASC;

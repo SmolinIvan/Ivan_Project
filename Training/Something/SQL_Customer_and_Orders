@@ -1,0 +1,5 @@
+SELECT CustomerID, CustomerName, COUNT(CustomerID) as Количество_заказов,  MAX(OrderDate) Дата_последнего_заказа FROM Orders
+INNER JOIN Customers USING(CustomerID)
+GROUP by CustomerID
+HAVING COUNT(CustomerID)> 5
+ORDER BY Количество_заказов DESC;

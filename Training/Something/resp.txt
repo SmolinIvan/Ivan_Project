@@ -1,0 +1,326 @@
+<Response [200]>
+[
+    {
+        "title": "yourpostname",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-15T19:08:06.539662",
+        "id": 7084
+    },
+    {
+        "title": "yourpostname",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-16T12:18:39.859918",
+        "id": 7145
+    },
+    {
+        "title": "yourpostname",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-16T12:32:49.424387",
+        "id": 7147
+    },
+    {
+        "title": "yourpostname",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-16T12:33:01.845817",
+        "id": 7148
+    },
+    {
+        "title": "yourpostname",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-16T12:33:40.054100",
+        "id": 7149
+    },
+    {
+        "title": "yourpostname",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-16T12:33:53.619880",
+        "id": 7150
+    },
+    {
+        "title": "yourpostname",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-16T12:36:06.524319",
+        "id": 7151
+    },
+    {
+        "title": "yourpostname",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-16T12:41:15.370673",
+        "id": 7152
+    },
+    {
+        "title": "1",
+        "content": "yourpostcontent",
+        "author": 45,
+        "publication_datetime": "2023-03-16T18:33:32.129376",
+        "id": 7224
+    },
+    {
+        "title": "Остроумное название",
+        "content": "Интересный контент",
+        "author": 4373,
+        "publication_datetime": "2023-03-17T13:29:15.933015",
+        "id": 7288
+    },
+    {
+        "title": "Остроумное название",
+        "content": "Интересный контент",
+        "author": 4373,
+        "publication_datetime": "2023-03-17T13:30:31.277584",
+        "id": 7289
+    },
+    {
+        "title": "Еще более остроумное название",
+        "content": "Еще более интересный контент",
+        "author": 4373,
+        "publication_datetime": "2023-03-17T13:31:18.971646",
+        "id": 7290
+    },
+    {
+        "title": "Еще более остроумное название",
+        "content": "Еще более интересный контент",
+        "author": 4373,
+        "publication_datetime": "2023-03-17T13:51:52.872914",
+        "id": 7295
+    },
+    {
+        "title": "Еще более остроумное название",
+        "content": "Еще более интересный контент",
+        "author": 4373,
+        "publication_datetime": "2023-03-17T13:54:47.760380",
+        "id": 7296
+    },
+    {
+        "title": "Остроумное название",
+        "content": "Интересный контент",
+        "author": 4373,
+        "publication_datetime": "2023-03-17T14:06:24.897967",
+        "id": 7297
+    },
+    {
+        "title": "{{post_title}}",
+        "content": "{{post_content}}",
+        "author": 4373,
+        "publication_datetime": "2023-03-18T15:25:28.656542",
+        "id": 7374
+    },
+    {
+        "title": "Остроумное название",
+        "content": "Интересное содержание",
+        "author": 4413,
+        "publication_datetime": "2023-03-18T16:41:32.306070",
+        "id": 7378
+    },
+    {
+        "title": "Один",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-18T16:47:48.169798",
+        "id": 7381
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-18T18:04:39.690815",
+        "id": 7398
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-18T18:06:45.172912",
+        "id": 7399
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-18T18:07:02.218383",
+        "id": 7400
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-18T18:07:09.393866",
+        "id": 7401
+    },
+    {
+        "title": "что-то уникальное",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-18T18:07:53.068293",
+        "id": 7402
+    },
+    {
+        "title": "что-то уникальное",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-18T18:08:00.184664",
+        "id": 7403
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T00:12:02.104606",
+        "id": 7415
+    },
+    {
+        "title": "Остроумное название",
+        "content": "Интересное содержание",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T00:19:05.869041",
+        "id": 7417
+    },
+    {
+        "title": "",
+        "content": "что-то прекрасное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T00:25:04.678784",
+        "id": 7418
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T00:25:05.765902",
+        "id": 7419
+    },
+    {
+        "title": "что-то уникальное",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T00:25:06.240758",
+        "id": 7420
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T00:48:20.199968",
+        "id": 7425
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T00:48:29.399865",
+        "id": 7426
+    },
+    {
+        "title": "Новове",
+        "content": "Контент",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T00:50:46.432238",
+        "id": 7427
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:47:02.036818",
+        "id": 7430
+    },
+    {
+        "title": "что-то уникальное",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:47:02.491943",
+        "id": 7431
+    },
+    {
+        "title": "Новове",
+        "content": "Контент",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:47:05.271912",
+        "id": 7432
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:50:10.773314",
+        "id": 7433
+    },
+    {
+        "title": "что-то уникальное",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:50:11.189614",
+        "id": 7434
+    },
+    {
+        "title": "Новове",
+        "content": "Контент",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:50:14.108098",
+        "id": 7435
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:51:46.690269",
+        "id": 7436
+    },
+    {
+        "title": "что-то уникальное",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:51:47.094098",
+        "id": 7437
+    },
+    {
+        "title": "Новове",
+        "content": "Контент",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T02:51:49.992647",
+        "id": 7438
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T03:08:10.282873",
+        "id": 7439
+    },
+    {
+        "title": "что-то уникальное",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T03:08:10.725454",
+        "id": 7440
+    },
+    {
+        "title": "",
+        "content": "что-то уникальное",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T04:09:46.441302",
+        "id": 7441
+    },
+    {
+        "title": "что-то уникальное",
+        "content": "",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T04:09:46.877291",
+        "id": 7442
+    },
+    {
+        "title": "Новове",
+        "content": "Контент",
+        "author": 4413,
+        "publication_datetime": "2023-03-19T04:09:55.822926",
+        "id": 7443
+    }
+]
+PASSED

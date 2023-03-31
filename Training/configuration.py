@@ -1,0 +1,1 @@
+SERVICE_URL = 'https://hr.recruit.liis.su/qa0/v1/api/smolin9667@gmail.com/'
