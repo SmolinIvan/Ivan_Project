@@ -14,12 +14,10 @@ async function testButton(){
     console.log('Переход на страницу index.html');
     await page.goto('file:///Q:/Git/Ivan_Project/html/index.html');
 
-    // console.log('Ввод текста "Автоматизация тестирования" в поисковую строку');
-   /*  const searchField = await page.$('#text');
-    await searchField.type('Автоматизация тестирования'); */
 
     console.log('Клик в кнопку "Retrowave?"');
     const searchButton = await page.$('.button[type=button]');
+    await searchButton.click();
     await searchButton.click();
     
     const result = await page.evaluate(() => {
@@ -31,7 +29,7 @@ async function testButton(){
      
       });
     console.log(result);
-    if (result.price == 'Изменение текста') {
+    if (result.price == 'это Kavinsky') {
         console.log('Ок')
     } else {
         console.log('Неок')
@@ -43,7 +41,7 @@ async function testButton(){
     console.log(result.price);
 };
 
-//testButton();
+testButton();
 
 async function testCard(){
     console.log('Запуск браузера');
@@ -75,4 +73,4 @@ async function testCard(){
     
 };
 
-testCard();
+//testCard();
