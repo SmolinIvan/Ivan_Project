@@ -11,8 +11,8 @@ async function testButton(){
     console.log('Создание новой вкладки в браузере');
     const page = await browser.newPage();
 
-    console.log('Переход на страницу inde.html');
-    await page.goto('file:///D:/Ivan_Project/html/index.html');
+    console.log('Переход на страницу index.html');
+    await page.goto('file:///Q:/Git/Ivan_Project/html/index.html');
 
     // console.log('Ввод текста "Автоматизация тестирования" в поисковую строку');
    /*  const searchField = await page.$('#text');
@@ -57,7 +57,7 @@ async function testCard(){
     const page = await browser.newPage();
 
     console.log('Переход на страницу inde.html');
-    await page.goto('file:///D:/Ivan_Project/html/index.html');
+    await page.goto('file:///Q:/Git/Ivan_Project/html/index.html');
 
     console.log('Клик по карточке');
     const card = await page.$('.card[type=button]');
