@@ -15,42 +15,63 @@ BODY_PUT_COMMENT["post"] = post_id
 
 
 # Создание поста, проверка кода ответа
-def test_post_posts_1(): #проверка созданного поста
+def test_post_create_code(): #проверка созданного поста
     
     assert r.status_code == 201, "Неверный код ответа" #проверка кода
     validate(body,POST_CREATE), "Неверная запись"
     print(r.json()) # вывод тела ответа
     
 # Проверка поста по id, проверка тела ответа, кода ответа
-def test_get_post_id(): #проверка поста по id
+def test_get_post_code(): #проверка поста по id
+    
+    d = requests.get(API_URL_POST_ID + str(post_id)) #отправка get-запроса с телом и данными авторизации
+    
+    assert d.status_code == 200, "Неверный код ответа" #проверка кода
+    
+
+def test_get_post_body():
     b = 0
     d = requests.get(API_URL_POST_ID + str(post_id)) #отправка get-запроса с телом и данными авторизации
     bodyd = d.json() # Тело ответа
-    assert d.status_code == 200, "Неверный код ответа" #проверка кода
+    
     if body == bodyd:
         b = b + 1 
     assert b == 1, "Неверная запись" # Проверка, что данные записались корректно
     print(d.json()) #вывод тела ответа
 
 # Проверка, что созданный пост есть в списке. Проверка кода ответа
-def test_get_all_posts(): # проверка всех постов
+def test_get_all_posts_code(): # проверка всех постов
+
+    
+    t = requests.get(API_URL)
+    
+    assert t.status_code == 200, "Неверный код ответа"
+    
+
+def test_get_all_posts_body(): # проверка всех постов
 
     b = 0
     t = requests.get(API_URL)
     bodyt = t.json()
-    assert t.status_code == 200, "Неверный код ответа"
+    
     if body in bodyt:
         b = b + 1
     assert b == 1, "Неверная запись" # Проверка, что пост есть в списке
 
 
 #РЕдактирование поста, проверка кода ответа, изменений
-def test_put_post(): 
+def test_put_post_code(): 
 
     r = requests.put(API_URL_POST_ID + str(post_id), json=POST_PUT, auth = ("admin",'123')) # редактирование поста. Тут в теле ответа будет "успешно"
-    a = requests.get(API_URL_POST_ID + str(post_id)) # получение тела запроса после изменения
     assert r.status_code == 200, "Неверный код ответа"
-    assert a.status_code == 200, "Неверный код ответа"
+    
+    
+
+def test_put_post_body(): 
+
+    a = requests.get(API_URL_POST_ID + str(post_id)) # получение тела запроса после изменения
+    
+    
     bodya = a.json()
     b = 0
     c = bodya.values()
@@ -58,7 +79,7 @@ def test_put_post():
         if i in c:
             b = b + 1
     assert b == len(POST_PUT.values()), "Изменения записались неверно"
-    print(bodya)
+     
 
 
 # Отправка запроса на создание комментария, внесение тела ответа и id комментария в глобальные переменные
@@ -66,12 +87,20 @@ t = requests.post(API_URL_COMMENT,json=BODY_PUT_COMMENT, auth = ("admin",'123'))
 bodyt = t.json()
 comment_id = bodyt["id"]
 
+def test_comment_create_code():
+     assert t.status_code == 201, "Неверный код ответа"
+
 #Проверка комментария, кода ответа, изменений
-def test_post_comment(): 
+def test_comment_get_code(): 
     BODY_PUT_COMMENT["post"] = comment_id
     a = requests.get(API_URL_COMMENT_ID +"/"+ str(comment_id)) # просмотр созданного комментария
-    assert t.status_code == 201, "Неверный код ответа"
+    
     assert a.status_code == 200, "Неверный код ответа"
+    
+
+def test_comment_body(): 
+    BODY_PUT_COMMENT["post"] = comment_id
+    a = requests.get(API_URL_COMMENT_ID +"/"+ str(comment_id)) # просмотр созданного комментария
     bodya = a.json()
     b = 0
     c = bodya.values()
@@ -81,23 +110,41 @@ def test_post_comment():
     assert b == len(BODY_PUT_COMMENT.values()), "Изменения записались неверно"
 
 # Проверка, что комментарий есть в списке
-def test_get_comments(): 
+def test_get_comments_code(): 
 
     r = requests.get(API_URL_COMMENT)
     assert r.status_code == 200, "Неверный статус кода"
+    
+    
+
+def test_get_comments_body(): 
+
+    r = requests.get(API_URL_COMMENT)
     body = r.json()
     b = 0
     if bodyt in body:
         b = b + 1
     assert b > 0 , "Комментария нету в общем списке комментариев после создания" # Проверка, что созданный коментарий есть в общем списке
 
-def test_put_comment():
+
+
+def test_put_comment_code():
     COMMENT_STAND["post"] = comment_id
     a = requests.put(API_URL_COMMENT_ID +"/"+ str(comment_id), json=COMMENT_STAND,auth = ("admin",'123'))   
     assert a.status_code == 200, "Неверный код ответа"
 
+def test_put_comment_body():
+    a = requests.get(API_URL_COMMENT_ID +"/"+ str(comment_id)) # просмотр созданного комментария
+    bodya = a.json()
+    b = 0
+    c = bodya.values()
+    for i in BODY_PUT_COMMENT.values(): #проверка, что изменения внеслись в пост
+        if i in c:
+            b = b + 1
+    assert b == len(BODY_PUT_COMMENT.values()), "Изменения записались неверно"
+
 # Удаление комментария, проверка, что комментарий удален, проверка кода ответа.
-def test_del_comment_id():
+def test_del_comment_id_code():
 
     a = requests.get(API_URL_COMMENT_ID +"/"+ str(comment_id)) # отправка запроса на просмотр комментария с целью сохранения тела ответа
     bodya = a.json() # сохранение тела ответа комментария
@@ -112,9 +159,11 @@ def test_del_comment_id():
         b = b + 1
     assert b == 1, "Комментарий есть, хотя должен быть удален"
 
-    a = requests.get(API_URL_COMMENT_ID +"/"+ str(comment_id)) # проверка, что комментарий удален
-    assert a.status_code == 404, "Неверный код ответа"
+    
 
+def test_del_comment_no_longer_exist(): # Комментарий удален
+    a = requests.get(API_URL_COMMENT_ID +"/"+ str(comment_id)) # отправка запроса на просмотр комментария с целью сохранения тела ответа
+    assert a.status_code == 404, "Неверный код ответа"
     
 # Удаление поста, проверка кода ответа, проверка, что пост удален и, что комментарии удалены вместе с ним. Проверка, что нельзя написать комментарии к удаленному посту
 def test_post_delete(): 
