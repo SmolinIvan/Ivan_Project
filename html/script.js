@@ -1,20 +1,18 @@
 
-
-
-// Изменение текста при нажатии на Retrowave?
+// массив, где хранятся данные для изменения содержимого "advice" при нажатии на кнопку
 let phrases = ['это Синтвейв (англ. Synthwave), также известный под названиями Ретровейв (англ. Retrowave), Futuresynth или Outrun (в честь эстетики одноимённой игры и альбома) — стиль электронной музыки, появившийся в середине 2000-х годов. Жанр основан на использовании синтезаторов, подражании музыке 1980-х (в частности, итало-диско) с добавлением новых технологий и попытке воспроизвести атмосферу фильмов и видеоигр той эпохи. Синтвейв достиг расцвета и популярности в 2010-е годы, на волне ностальгии, повышенного интереса к киберпанку и 1980-ым.',
 ' это Kavinsky', ' это Orax', ' это Dance with the Dead', ' это 3FORCE', " сотни великолепных и атмосферных треков"];
 
-
 let index = 0;
 
-
+// Сохранение содержимого в переменные
 let minfo = document.querySelector(".minfo");
 let mtitle = document.querySelector(".mtitle");
 let modalimage = document.querySelector(".modalimage");
 let button = document.querySelector('.button');
 let phrase = document.querySelector('.phrase');
 
+// Событие. При нажатии на кнопку мняетмся текст в "advice"
 button.addEventListener('click', function() {
     if (index < phrases.length) {
     phrase.textContent = phrases[index]
@@ -25,11 +23,7 @@ button.addEventListener('click', function() {
 }
 );
 
-
-
-
-
-// Модальное окно
+// Создание постоянных для открытия и закртия модального окна
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const openModalBtn1 = document.querySelectorAll(".card")[0];
@@ -38,24 +32,24 @@ const openModalBtn3 = document.querySelectorAll(".card")[2];
 const openModalBtn4 = document.querySelectorAll(".card")[3];
 const closeModalBtn = document.querySelector(".btn-close");
 
-// close modal function
+// Функция вызывающая закрытие модального окна
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
 
-// close the modal when the close button and overlay is clicked
+// События. При нажатии на оверлей или кнопку закрытия, модалка закрывается
 closeModalBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
-// close modal when the Esc key is pressed
+// Событие. Модалка закрывается при нажатии на Esc
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
     closeModal();
   }
 });
 
-// open modal function
+// Функция вызывающая открытие модального окна для карточки Kavinsky
 const openModal1 = function() {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -88,8 +82,23 @@ const openModal4 = function() {
     modalimage.src = "modal/3Force_modal.jpg"
 };
 
-// open modal event
+// Событие. Открытие модального окна с содержимым зависящим от карточки
 openModalBtn1.addEventListener("click", openModal1);
 openModalBtn2.addEventListener("click", openModal2);
 openModalBtn3.addEventListener("click", openModal3);
 openModalBtn4.addEventListener("click", openModal4);
+
+// Модальное окно с содержимым текствых полей
+
+let uname = document.querySelectorAll(".input")[0];
+let email = document.querySelectorAll(".input")[1];
+let ButtonSend = document.querySelector(".btnSnd");
+
+const openModalSend = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  mtitle.textContent = document.getElementById("name").value;
+  minfo.textContent = document.getElementById("email").value;
+};
+
+ButtonSend.addEventListener("click", openModalSend);
