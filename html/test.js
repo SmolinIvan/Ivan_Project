@@ -79,7 +79,7 @@ async function testBtnSend(){
     console.log('Запуск браузера');
     const browser = await puppeteer.launch({
         headless: false,
-        slowMo: 200,
+        slowMo: 50,
         defaultViewport: null}
     );
 
@@ -94,7 +94,7 @@ async function testBtnSend(){
     await page.waitForSelector('input[name=name]');
     await page.waitForSelector('input[name=email]');
     await page.$eval('input[name=name]', el => el.value = 'Тимоха');
-    await page.$eval('input[name=email]', el => el.value = 'Екараный бабай');
+    await page.$eval('input[name=email]', el => el.value = 'Екараный бабай, успокойся');
 
 
     console.log('Клик по кнопке "Отправить"');
@@ -105,14 +105,14 @@ async function testBtnSend(){
         
         let uname = document.querySelector('.mtitle').innerText;
         let email = document.querySelector('.minfo').innerText;
-        return{
+        return {
             uname,
             email
         }
      
       });
     console.log(result);
-    if (result.uname === 'Тимоха' && result.email == 'Екараный бабай') {
+    if (result.uname === 'Тимоха' && result.email === 'Екараный бабай, успокойся') {
         console.log('Ок')
     } else {
         console.log('Неок')

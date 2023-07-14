@@ -97,8 +97,10 @@ let ButtonSend = document.querySelector(".btnSnd");
 const openModalSend = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  modalimage.src = "modal/ModalSend.jpg";
+  minfo.style.textAlign = 'center';
   mtitle.textContent = document.getElementById("name").value;
-  minfo.textContent = document.getElementById("email").value;
+  minfo.textContent = "Мы отправили подборку лушчих произведений Retrowave/Synthwave на ваш электронный почтовый ящик " + '"' + document.getElementById("email").value + '"';
 };
 
 ButtonSend.addEventListener("click", openModalSend);
