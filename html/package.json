@@ -1,5 +1,22 @@
 {
   "dependencies": {
+    "parcel": "^2.9.3",
     "puppeteer": "^20.8.2"
-  }
+  },
+  "name": "html",
+  "description": "Данный проект представляет собой веб-страницу и автотесты, проверяющие функциональность на фронт-энде.\r В планах: провести рефакторинг, подключить внешние модули, добафить бекэнд.",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "puptest": "node test.js",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

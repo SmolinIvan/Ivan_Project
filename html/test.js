@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const {url} = require('./texts/fortests');
 
 async function testButton(){
     console.log('Запуск браузера');
@@ -12,7 +13,7 @@ async function testButton(){
     const page = await browser.newPage();
 
     console.log('Переход на страницу index.html');
-    await page.goto('file:///Q:/Git/Ivan_Project/html/index.html');
+    await page.goto(url);
 
 
     console.log('Клик в кнопку "Retrowave?"');
@@ -23,7 +24,7 @@ async function testButton(){
     const result = await page.evaluate(() => {
         
         let price = document.querySelector('.phrase').innerText;
-        return{
+        return {
             price
         }
      
@@ -54,8 +55,8 @@ async function testCard(){
     console.log('Создание новой вкладки в браузере');
     const page = await browser.newPage();
 
-    console.log('Переход на страницу inde.html');
-    await page.goto('file:///Q:/Git/Ivan_Project/html/index.html');
+    console.log('Переход на страницу index.html');
+    await page.goto(url);
 
     console.log('Клик по карточке');
     const card = await page.$('.card[type=button]');
@@ -87,14 +88,14 @@ async function testBtnSend(){
     console.log('Создание новой вкладки в браузере');
     const page = await browser.newPage();
 
-    console.log('Переход на страницу inde.html');
-    await page.goto('file:///Q:/Git/Ivan_Project/html/index.html');
+    console.log('Переход на страницу index.html');
+    await page.goto(url);
 
     console.log('Ввод текста в поля')
     await page.waitForSelector('input[name=name]');
     await page.waitForSelector('input[name=email]');
-    await page.$eval('input[name=name]', el => el.value = 'Тимоха');
-    await page.$eval('input[name=email]', el => el.value = 'Екараный бабай, успокойся');
+    await page.$eval('input[name=name]', el => el.value = 'Иван Смолин');
+    await page.$eval('input[name=email]', el => el.value = 'example@test.ru');
 
 
     console.log('Клик по кнопке "Отправить"');
@@ -112,7 +113,7 @@ async function testBtnSend(){
      
       });
     console.log(result);
-    if (result.uname === 'Тимоха' && result.email === 'Екараный бабай, успокойся') {
+    if (result.uname === 'Иван Смолин' && result.email === 'Мы отправили подборку лучших произведений Retrowave/Synthwave на ваш электронный почтовый ящик "example@test.ru"') {
         console.log('Ок')
     } else {
         console.log('Неок')
