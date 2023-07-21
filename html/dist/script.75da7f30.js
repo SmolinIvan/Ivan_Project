@@ -123,9 +123,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ModalInfo = void 0;
-var ModalInfo = ["Венсан Пьер Клод Белорже - диджей, представитель французской хаус-музыки, более известен под именем Kavinsky. Вдохновением для творчества Венсана служат фильмы о зомби эпохи VHS, хип-хоп и фанк последних десятилетий XX века. Исполняет треки в стиле электронных саундтреков к фильмам 1980-х годов. Музыкальные композиции и видеоклипы Белорже повествуют о вымышленном персонаже Kavinsky - молодом человеке, который погиб в 1986 году, не справившись с управлением своего красного Ferrari Testarossa, и восстал из мёртвых 20 лет спустя, для того чтобы творить собственную электронную музыку", "Orax является проектом итальянского музыканта Orax Dumollard. В 1995-2003 гг. он являлся гитаристом и композитором группы Xilema, а к 2010 году решил начать сольную карьеру. В 2012 самостоятельно выпустил свой первый альбом, а в феврале 2013 Orax уже был объявлен проектом недели на MTV new generation Italia.", "Калифорнийский электронный дуэт, давший второе дыхание музыке эпохи VHS. На данный момент являются одними из самых популярных и обсуждаемых коллективов в стиле Retrowave наряду с Perturbator и Carpenter Brut.", "«3FORCE» – трио из Санкт-Петербурга, совместный проект знаменитого drum-and-bass дуэта Gancher & Ruin и самобытного электронщика EyeScream. Отметившись множеством релизов на ведущих мировых лейблах (Position Chrome, Tainted Audio, Tympanik Audio, Blue Tunes Records), музыканты выпустили ностальгический альбом «Intergalactic», пронизанный атмосферой электронной музыки 80-х. "];
+exports.phrases = exports.ModalInfo = void 0;
+var ModalInfo = ["Венсан Пьер Клод Белорже - диджей, представитель французской хаус-музыки, более известен под именем Kavinsky. Вдохновением для творчества Венсана служат фильмы о зомби эпохи VHS, хип-хоп и фанк последних десятилетий XX века. Исполняет треки в стиле электронных саундтреков к фильмам 1980-х годов. Музыкальные композиции и видеоклипы Белорже повествуют о вымышленном персонаже Kavinsky - молодом человеке, который погиб в 1986 году, не справившись с управлением своего красного Ferrari Testarossa, и восстал из мёртвых 20 лет спустя, для того чтобы творить собственную электронную музыку", "Orax является проектом итальянского музыканта Orax Dumollard. В 1995-2003 гг. он являлся гитаристом и композитором группы Xilema, а к 2010 году решил начать сольную карьеру. В 2012 самостоятельно выпустил свой первый альбом, а в феврале 2013 Orax уже был объявлен проектом недели на MTV new generation Italia.", "Калифорнийский электронный дуэт, давший второе дыхание музыке эпохи VHS. На данный момент являются одними из самых популярных и обсуждаемых коллективов в стиле Retrowave наряду с Perturbator и Carpenter Brut.", "«3FORCE» – трио из Санкт-Петербурга, совместный проект знаменитого drum-and-bass дуэта Gancher & Ruin и самобытного электронщика EyeScream. Отметившись множеством релизов на ведущих мировых лейблах (Position Chrome, Tainted Audio, Tympanik Audio, Blue Tunes Records), музыканты выпустили ностальгический альбом «Intergalactic», пронизанный атмосферой электронной музыки 80-х."];
 exports.ModalInfo = ModalInfo;
+var phrases = ['это Синтвейв (англ. Synthwave), также известный под названиями Ретровейв (англ. Retrowave), Futuresynth или Outrun (в честь эстетики одноимённой игры и альбома) — стиль электронной музыки, появившийся в середине 2000-х годов. Жанр основан на использовании синтезаторов, подражании музыке 1980-х (в частности, итало-диско) с добавлением новых технологий и попытке воспроизвести атмосферу фильмов и видеоигр той эпохи. Синтвейв достиг расцвета и популярности в 2010-е годы, на волне ностальгии, повышенного интереса к киберпанку и 1980-ым.', ' это Kavinsky', ' это Orax', ' это Dance with the Dead', ' это 3FORCE', " сотни великолепных и атмосферных треков"];
+exports.phrases = phrases;
 },{}],"modal/Kavinsky_modal.jpeg":[function(require,module,exports) {
 module.exports = "/Kavinsky_modal.d5af2273.jpeg";
 },{}],"modal/Oraxmodal.jpg":[function(require,module,exports) {
@@ -134,6 +136,8 @@ module.exports = "/Oraxmodal.dbe07f52.jpg";
 module.exports = "/Dancewiththedead_modal.532338a7.jpg";
 },{}],"modal/3Force_modal.jpg":[function(require,module,exports) {
 module.exports = "/3Force_modal.b4a9718f.jpg";
+},{}],"modal/ModalSend.jpg":[function(require,module,exports) {
+module.exports = "/ModalSend.62bb9d30.jpg";
 },{}],"script.js":[function(require,module,exports) {
 "use strict";
 
@@ -142,9 +146,10 @@ var _Kavinsky_modal = _interopRequireDefault(require("./modal/Kavinsky_modal.jpe
 var _Oraxmodal = _interopRequireDefault(require("./modal/Oraxmodal.jpg"));
 var _Dancewiththedead_modal = _interopRequireDefault(require("./modal/Dancewiththedead_modal.jpg"));
 var _Force_modal = _interopRequireDefault(require("./modal/3Force_modal.jpg"));
+var _ModalSend = _interopRequireDefault(require("./modal/ModalSend.jpg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 // массив, где хранятся данные для изменения содержимого "advice" при нажатии на кнопку
-var phrases = ['это Синтвейв (англ. Synthwave), также известный под названиями Ретровейв (англ. Retrowave), Futuresynth или Outrun (в честь эстетики одноимённой игры и альбома) — стиль электронной музыки, появившийся в середине 2000-х годов. Жанр основан на использовании синтезаторов, подражании музыке 1980-х (в частности, итало-диско) с добавлением новых технологий и попытке воспроизвести атмосферу фильмов и видеоигр той эпохи. Синтвейв достиг расцвета и популярности в 2010-е годы, на волне ностальгии, повышенного интереса к киберпанку и 1980-ым.', ' это Kavinsky', ' это Orax', ' это Dance with the Dead', ' это 3FORCE', " сотни великолепных и атмосферных треков"];
+
 var index = 0;
 
 // Сохранение содержимого в переменные
@@ -156,12 +161,12 @@ var phrase = document.querySelector('.phrase');
 
 // Событие. При нажатии на кнопку мняетмся текст в "advice"
 button.addEventListener('click', function () {
-  if (index < phrases.length) {
-    phrase.textContent = phrases[index];
+  if (index < _texts.phrases.length) {
+    phrase.textContent = _texts.phrases[index];
     index = index + 1;
   } else {
     index = 0;
-    phrase.textContent = phrases[index];
+    phrase.textContent = _texts.phrases[index];
   }
   ;
 });
@@ -236,13 +241,13 @@ var ButtonSend = document.querySelector(".btnSnd");
 var openModalSend = function openModalSend() {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
-  modalimage.src = "modal/ModalSend.jpg";
+  modalimage.src = _ModalSend.default;
   minfo.style.textAlign = 'center';
   mtitle.textContent = document.getElementById("name").value;
   minfo.textContent = "Мы отправили подборку лучших произведений Retrowave/Synthwave на ваш электронный почтовый ящик " + '"' + document.getElementById("email").value + '"';
 };
 ButtonSend.addEventListener("click", openModalSend);
-},{"./texts/texts":"texts/texts.js","./modal/Kavinsky_modal.jpeg":"modal/Kavinsky_modal.jpeg","./modal/Oraxmodal.jpg":"modal/Oraxmodal.jpg","./modal/Dancewiththedead_modal.jpg":"modal/Dancewiththedead_modal.jpg","./modal/3Force_modal.jpg":"modal/3Force_modal.jpg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./texts/texts":"texts/texts.js","./modal/Kavinsky_modal.jpeg":"modal/Kavinsky_modal.jpeg","./modal/Oraxmodal.jpg":"modal/Oraxmodal.jpg","./modal/Dancewiththedead_modal.jpg":"modal/Dancewiththedead_modal.jpg","./modal/3Force_modal.jpg":"modal/3Force_modal.jpg","./modal/ModalSend.jpg":"modal/ModalSend.jpg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -267,7 +272,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52059" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62166" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

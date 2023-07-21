@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const {url} = require('./texts/fortests');
+const {url} = require('../texts/fortests');
 
 async function testButton(){
     console.log('Запуск браузера');
@@ -23,14 +23,14 @@ async function testButton(){
     
     const result = await page.evaluate(() => {
         
-        let price = document.querySelector('.phrase').innerText;
+        let phrase = document.querySelector('.phrase').innerText;
         return {
-            price
+            phrase
         }
      
       });
     console.log(result);
-    if (result.price == 'это Kavinsky') {
+    if (result.phrase == 'это Kavinsky') {
         console.log('Ок')
     } else {
         console.log('Неок')

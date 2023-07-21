@@ -1,14 +1,13 @@
 import {ModalInfo} from './texts/texts';
-import  KavinskyModalImage  from './modal/Kavinsky_modal.jpeg';
+import {phrases} from './texts/texts';
+import KavinskyModalImage  from './modal/Kavinsky_modal.jpeg';
 import OraxModalImage from './modal/Oraxmodal.jpg';
 import DancewiththedeadModalImage from './modal/Dancewiththedead_modal.jpg';
 import ThreeForceImage from './modal/3Force_modal.jpg';
+import ModalSendImage from './modal/ModalSend.jpg';
+
 
 // массив, где хранятся данные для изменения содержимого "advice" при нажатии на кнопку
-let phrases = ['это Синтвейв (англ. Synthwave), также известный под названиями Ретровейв (англ. Retrowave), Futuresynth или Outrun (в честь эстетики одноимённой игры и альбома) — стиль электронной музыки, появившийся в середине 2000-х годов. Жанр основан на использовании синтезаторов, подражании музыке 1980-х (в частности, итало-диско) с добавлением новых технологий и попытке воспроизвести атмосферу фильмов и видеоигр той эпохи. Синтвейв достиг расцвета и популярности в 2010-е годы, на волне ностальгии, повышенного интереса к киберпанку и 1980-ым.',
-' это Kavinsky', ' это Orax', ' это Dance with the Dead', ' это 3FORCE', " сотни великолепных и атмосферных треков"];
-
-
 
 let index = 0;
 
@@ -104,7 +103,7 @@ let ButtonSend = document.querySelector(".btnSnd");
 const openModalSend = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
-  modalimage.src = "modal/ModalSend.jpg";
+  modalimage.src = ModalSendImage;
   minfo.style.textAlign = 'center';
   mtitle.textContent = document.getElementById("name").value;
   minfo.textContent = "Мы отправили подборку лучших произведений Retrowave/Synthwave на ваш электронный почтовый ящик " + '"' + document.getElementById("email").value + '"';
