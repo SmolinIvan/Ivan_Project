@@ -25,24 +25,6 @@ beforeAll(async () => {
   });
 
 describe("Проверка содержимого страниц", () => {
-  test("При двух кликах выводится текст 'Retrowave - это Kavinsky'", async () => {
-      
-      const Button = await page.$('.button[type=button]');
-      await Button.click();
-      await Button.click();
-      let result = await page.evaluate(() => {
-        let advice = document.querySelector('.advice1').innerText;
-        let phrase = document.querySelector('.phrase').innerText;
-        return {
-          advice,
-          phrase
-        }
-      });
-
-      expect(result.advice).toBe("Retrowave - ");
-      expect(result.phrase).toBe("это Kavinsky");
-      });
-
   test("Проверка cодержимого карточки Kavinsky", async () => {
       const card1 = await page.$('.card[type=card1]');
       const btnClose = await page.$('.btn-close');

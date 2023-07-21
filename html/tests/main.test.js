@@ -18,11 +18,19 @@ beforeAll(async () => {
     await page.setViewport({ width, height });
     maintext = await page.evaluate( async () => {
       let title = document.querySelector('title').textContent;
-      let cardContentTitle = document.querySelector('h3').textContent
+      let cardContentTitle = document.querySelector('h3').textContent;
+      let cardTitle1 = document.querySelector('.card[type=card1]').innerText;
+      let cardTitle2 = document.querySelector('.card[type=card2]').innerText;
+      let cardTitle3 = document.querySelector('.card[type=card3]').innerText;
+      let cardTitle4 = document.querySelector('.card[type=card4]').innerText;
       return {
           title,
-          cardContentTitle
-      }
+          cardContentTitle,
+          cardTitle1,
+          cardTitle2,
+          cardTitle3,
+          cardTitle4
+      };
   });
   });
   afterAll(() => {
@@ -47,14 +55,29 @@ beforeAll(async () => {
       expect(result.phrase).toBe("это Kavinsky");
     });
 
-    test("Проверка заголовка страницы", async () => {  
+    test("Заголовок страницы", async () => {  
       expect(maintext.title).toBe("New Retro Wave");
     });
   
-    test("Проверка заголовка страницы", async () => {  
+    test("Заголовок контента", async () => {  
       expect(maintext.cardContentTitle).toBe(" Известные представители жанра ");
     });
-  
+
+    test("Проверка названия карточки Kavinsky", async () => {
+      expect(maintext.cardTitle1).toBe("Kavinsky");
+    });
+    
+    test("Проверка названия карточки Orax", async () => {
+      expect(maintext.cardTitle2).toBe("Orax");
+    });
+
+    test("Проверка названия карточки Dance With The Dead", async () => {
+      expect(maintext.cardTitle3).toBe("Dance with the Dead");
+    });
+
+    test("Проверка названия карточки 3FORCE", async () => {
+      expect(maintext.cardTitle4).toBe("3FORCE");
+    });
 
   
 });
