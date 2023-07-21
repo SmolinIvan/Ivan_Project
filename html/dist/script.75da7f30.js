@@ -237,14 +237,34 @@ openModalBtn4.addEventListener("click", openModal4);
 
 var uname = document.querySelectorAll(".input")[0];
 var email = document.querySelectorAll(".input")[1];
+var errmsg1 = document.querySelectorAll(".label")[1];
+var errmsg2 = document.querySelectorAll(".label")[3];
 var ButtonSend = document.querySelector(".btnSnd");
 var openModalSend = function openModalSend() {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
   modalimage.src = _ModalSend.default;
   minfo.style.textAlign = 'center';
-  mtitle.textContent = document.getElementById("name").value;
-  minfo.textContent = "Мы отправили подборку лучших произведений Retrowave/Synthwave на ваш электронный почтовый ящик " + '"' + document.getElementById("email").value + '"';
+  if (uname.value == "") {
+    uname.style.border = "3px solid red";
+    errmsg1.style.color = "rgb(255, 0, 0, 1)";
+  } else {
+    uname.style.border = "1px solid black";
+    errmsg1.style.color = "rgb(255, 0, 0, 0)";
+  }
+  ;
+  if (email.value == "") {
+    email.style.border = "3px solid red";
+    errmsg2.style.color = "rgb(255, 0, 0, 1)";
+  } else {
+    email.style.border = "1px solid black";
+    errmsg2.style.color = "rgb(255, 0, 0, 0)";
+  }
+  ;
+  if (uname.value != "" && email.value != "") {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+    mtitle.textContent = document.getElementById("name").value;
+    minfo.textContent = "Мы отправили подборку лучших произведений Retrowave/Synthwave на ваш электронный почтовый ящик " + '"' + document.getElementById("email").value + '"';
+  }
 };
 ButtonSend.addEventListener("click", openModalSend);
 },{"./texts/texts":"texts/texts.js","./modal/Kavinsky_modal.jpeg":"modal/Kavinsky_modal.jpeg","./modal/Oraxmodal.jpg":"modal/Oraxmodal.jpg","./modal/Dancewiththedead_modal.jpg":"modal/Dancewiththedead_modal.jpg","./modal/3Force_modal.jpg":"modal/3Force_modal.jpg","./modal/ModalSend.jpg":"modal/ModalSend.jpg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -272,7 +292,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62166" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62026" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -98,15 +98,40 @@ openModalBtn4.addEventListener("click", openModal4);
 
 let uname = document.querySelectorAll(".input")[0];
 let email = document.querySelectorAll(".input")[1];
+let errmsg1 = document.querySelectorAll(".label")[1];
+let errmsg2 = document.querySelectorAll(".label")[3];
+
 let ButtonSend = document.querySelector(".btnSnd");
 
 const openModalSend = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
+  
   modalimage.src = ModalSendImage;
   minfo.style.textAlign = 'center';
-  mtitle.textContent = document.getElementById("name").value;
-  minfo.textContent = "Мы отправили подборку лучших произведений Retrowave/Synthwave на ваш электронный почтовый ящик " + '"' + document.getElementById("email").value + '"';
+  
+  
+  if (uname.value == "")  {
+    uname.style.border = "3px solid red";
+    errmsg1.style.color = "rgb(255, 0, 0, 1)";
+    
+  } else {
+    uname.style.border = "1px solid black";
+    errmsg1.style.color = "rgb(255, 0, 0, 0)";
+
+  };
+  if (email.value == "")  {
+    email.style.border = "3px solid red";
+    errmsg2.style.color = "rgb(255, 0, 0, 1)";
+  }  else {
+    email.style.border = "1px solid black";
+    errmsg2.style.color = "rgb(255, 0, 0, 0)";
+  };
+
+  if (uname.value !="" && email.value != "") {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+    mtitle.textContent = document.getElementById("name").value;
+    minfo.textContent = "Мы отправили подборку лучших произведений Retrowave/Synthwave на ваш электронный почтовый ящик " + '"' + document.getElementById("email").value + '"';
+  }
 };
 
 ButtonSend.addEventListener("click", openModalSend);
