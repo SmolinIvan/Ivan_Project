@@ -11,17 +11,18 @@ let browser;
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
-    headless: "new"
-    // slowMo: 50,
-    // args: [`--window-size=${width},${height}`]
+      headless: "new",
+      // slowMo: 50,
+      // args: [`--winodw-size=${width},${height}`]
   });
   page = await browser.newPage();
-  await page.goto(url);
   // await page.setViewport({ width, height });
+  await page.goto(url);
 });
 afterAll(() => {
   browser.close();
 });
+
 
 describe("Проверка содержимого страниц", () => {
   test("Проверка cодержимого карточки Kavinsky", async () => {
@@ -29,16 +30,16 @@ describe("Проверка содержимого страниц", () => {
     const btnClose = await page.$('.btn-close');
     await card1.click();
 
-    let result = await page.evaluate( () => {
-      let mtitle = document.querySelector('.mtitle').innerText;
-      let minfo = document.querySelector('.minfo').innerText;
+    const result = await page.evaluate( () => {
+      const mtitle = document.querySelector('.mtitle').textContent;
+      const minfo = document.querySelector('.minfo').textContent;
       return {
         mtitle,
         minfo
         };
     });
     
-    btnClose.click();
+    await btnClose.click();
     expect(result.mtitle).toBe(mtitle[0]);
     expect(result.minfo).toBe(minfo[0]);
   });
@@ -56,7 +57,7 @@ describe("Проверка содержимого страниц", () => {
         minfo1
       };
     });
-    btnClose.click() 
+    await btnClose.click() 
     expect(result.mtitle1).toBe(mtitle[1]);
     expect(result.minfo1).toBe(minfo[1]); 
         
@@ -75,7 +76,7 @@ describe("Проверка содержимого страниц", () => {
         minfo2
       };
     });
-    btnClose.click(); 
+    await btnClose.click()  
     expect(result.mtitle2).toBe(mtitle[2]);
     expect(result.minfo2).toBe(minfo[2]);     
   });
@@ -93,8 +94,9 @@ describe("Проверка содержимого страниц", () => {
         minfo3
       };
     });
-    btnClose.click(); 
+    await btnClose.click() 
     expect(result.mtitle3).toBe(mtitle[3]);
     expect(result.minfo3).toBe(minfo[3]);    
   });
 });
+
