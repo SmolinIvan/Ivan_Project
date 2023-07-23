@@ -245,18 +245,18 @@ var openModalSend = function openModalSend() {
   minfo.style.textAlign = 'center';
   if (uname.value == "") {
     uname.style.border = "3px solid red";
-    errmsg1.style.color = "rgb(255, 0, 0, 1)";
+    errmsg1.textContent = 'Введите имя';
   } else {
     uname.style.border = "1px solid black";
-    errmsg1.style.color = "rgb(255, 0, 0, 0)";
+    errmsg1.textContent = '';
   }
   ;
   if (email.value == "") {
     email.style.border = "3px solid red";
-    errmsg2.style.color = "rgb(255, 0, 0, 1)";
+    errmsg2.textContent = 'Введите email';
   } else {
     email.style.border = "1px solid black";
-    errmsg2.style.color = "rgb(255, 0, 0, 0)";
+    errmsg2.textContent = '';
   }
   ;
   if (uname.value != "" && email.value != "") {
@@ -292,7 +292,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62026" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53614" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

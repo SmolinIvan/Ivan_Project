@@ -3,19 +3,19 @@ const {url} = require('../texts/fortests');
 
 let page;
 let browser;
-const width = 1920;
-const height = 1080;
+// const width = 1920;
+// const height = 1080;
 let maintext;
 
 beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: false,
-      slowMo: 50,
-      args: [`--window-size=${width},${height}`]
+      headless: "new"
+      // slowMo: 50,
+      // args: [`--window-size=${width},${height}`]
     });
     page = await browser.newPage();
-    await page.goto(`${url}`);
-    await page.setViewport({ width, height });
+    await page.goto(url);
+    // await page.setViewport({ width, height });
     maintext = await page.evaluate( async () => {
       let title = document.querySelector('title').textContent;
       let cardContentTitle = document.querySelector('h3').textContent;
@@ -23,15 +23,22 @@ beforeAll(async () => {
       let cardTitle2 = document.querySelector('.card[type=card2]').innerText;
       let cardTitle3 = document.querySelector('.card[type=card3]').innerText;
       let cardTitle4 = document.querySelector('.card[type=card4]').innerText;
+      let email = document.querySelectorAll('.footer1')[0].innerText;
+      let authorname = document.querySelectorAll('.footer1')[2].innerText;
+      let tgname = document.querySelectorAll('.footer1')[4].innerText;
+
       return {
           title,
           cardContentTitle,
           cardTitle1,
           cardTitle2,
           cardTitle3,
-          cardTitle4
+          cardTitle4,
+          email,
+          authorname,
+          tgname
       };
-  });
+    });
   });
   afterAll(() => {
     browser.close();
@@ -78,7 +85,17 @@ beforeAll(async () => {
     test("Проверка названия карточки 3FORCE", async () => {
       expect(maintext.cardTitle4).toBe("3FORCE");
     });
+    test("Проверка футера: email", async () => {
+      expect(maintext.email).toBe("ivansmolin9667@yandex.ru");
+    });
 
+    test("Проверка футера: Имя автора (Иван Смолин)", async () => {
+      expect(maintext.authorname).toBe("Ivan Smolin");
+    });
+
+    test("Проверка футера: имя в telegram", async () => {
+      expect(maintext.tgname).toBe("@SmolingIva");
+    });
   
 });
   
