@@ -55,6 +55,7 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+
 // Функция вызывающая открытие модального окна для карточки Kavinsky
 const openModal1 = function() {
   modal.classList.remove("hidden");

@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "parcel": "^2.9.3",
     "puppeteer": "^20.9.0"
   },
   "name": "html",
@@ -15,9 +14,12 @@
     "test": "jest",
     "dev": "parcel index.html",
     "puptest": "node test.js",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --out-dir=build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "test": "tests"
+  }
 }
